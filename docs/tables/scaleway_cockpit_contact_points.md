@@ -1,4 +1,4 @@
-# Table: scaleway_iam_api_key
+# Table: scaleway_cockpit_contact_points
 
 Contact points define who is notified when an alert fires. Contact points include emails, Slack, on-call systems and texts. When an alert fires, all contact points are notified.
 
