@@ -26,6 +26,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scaleway_baremetal_server":        tableScalewayBaremetalServer(ctx),
 			"scaleway_cockpit_contact_points":  tableScalewayCockpitContactPoints(ctx),
 			"scaleway_cockpit_grafana_users":   tableScalewayCockpitGrafanaUsers(ctx),
+			"scaleway_cockpit_plans":           tableScalewayCockpitPlans(ctx),
 			"scaleway_instance_image":          tableScalewayInstanceImage(ctx),
 			"scaleway_instance_ip":             tableScalewayInstanceIP(ctx),
 			"scaleway_instance_security_group": tableScalewayInstanceSecurityGroup(ctx),
