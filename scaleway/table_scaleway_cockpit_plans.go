@@ -16,7 +16,7 @@ import (
 func tableScalewayCockpitPlans(_ context.Context) *plugin.Table {
 	return &plugin.Table{
 		Name:        "scaleway_cockpit_plans",
-		Description: "List of all pricing plans available for Cokpit in Scaleway.",
+		Description: "List of all pricing plans available for Cockpit in Scaleway.",
 		List: &plugin.ListConfig{
 			Hydrate:    listCockpitPlans,
 			KeyColumns: []*plugin.KeyColumn{},
@@ -77,7 +77,7 @@ func listCockpitPlans(ctx context.Context, d *plugin.QueryData, h *plugin.Hydrat
 	// Create client
 	client, err := getSessionConfig(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("scaleway_cockpit_contact_points.listCockpitGrafanaUsers", "connection_error", err)
+		plugin.Logger(ctx).Error("scaleway_cockpit_plans.listCockpitPlans", "connection_error", err)
 		return nil, err
 	}
 
@@ -104,7 +104,7 @@ func listCockpitPlans(ctx context.Context, d *plugin.QueryData, h *plugin.Hydrat
 	for {
 		resp, err := cockpitApi.ListPlans(req)
 		if err != nil {
-			plugin.Logger(ctx).Error("scaleway_cockpit_contact_points.listCockpitGrafanaUsers", "query_error", err)
+			plugin.Logger(ctx).Error("scaleway_cockpit_plans.listCockpitPlans", "query_error", err)
 			//Break if cockpit does not exist in project
 			break
 		}
